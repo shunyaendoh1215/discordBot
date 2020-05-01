@@ -44,7 +44,8 @@ client.on('message', (message) => {
   }
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login('NzA1NDAxMTI1MjUxMTg2Njk4.XqwQsQ.UNMh7GHqeHDvwcxAnAvUmKoHpIU');
+// client.login(process.env.BOT_TOKEN);
 
 function getChampionName(name) {
   switch (true) {
