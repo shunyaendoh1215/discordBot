@@ -9,4 +9,4 @@ require('./messages/services');
 require('./messages/info');
 require('./messages/echo');
 
-client.login('NzA1NDAxMTI1MjUxMTg2Njk4.Xq7u8Q.lozXt1AW3EfuUFaqG7OXpMiRhDc');
+client.login('yourToken');
