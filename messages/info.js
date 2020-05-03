@@ -1,11 +1,11 @@
-const Discord = require('discord.js');
-client = new Discord.Client();
+console.log('ready for info.js.');
 
-const Info = client.on('message', (message) => {
-  if (message.author.bot) return;
-  if (message.content == '/help lolbot') {
-    message.reply(
-      `
+const Info = () => {
+  client.on('message', (message) => {
+    if (message.author.bot) return;
+    if (message.content == '/help lolbot') {
+      message.reply(
+        `
       "/yourgg [SN]": 📈YOUR.GGでサモナーを検索
 
       "/opgg [SN]": 📈OP.GGでサモナーを検索
@@ -16,6 +16,9 @@ const Info = client.on('message', (message) => {
 
       "/dra info": 🐉リュウさん☆の情報を検索
       `
-    );
-  }
-});
+      );
+    }
+  });
+};
+
+exports.Info = Info();

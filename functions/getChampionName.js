@@ -1,5 +1,4 @@
-const getChampionName = (content) => {
-  let name = content.split(' ')[1];
+module.exports.getChampionName = (name) => {
   switch (true) {
     case /Aatrox|aatrox|a太郎|エイトロックス|エイトロ/.test(name):
       return 'Aatrox';
