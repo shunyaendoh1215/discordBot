@@ -1,4 +1,4 @@
-import client from '../index';
+import { client } from '../index';
 
 export default Echo = client.on('message', (message) => {
   if (message.author.bot) return;
