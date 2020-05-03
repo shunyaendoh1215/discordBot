@@ -1,4 +1,4 @@
-import { client } from '../index';
+import client from '../index';
 import getChampionName from '../functions/getChampionName';
 
 export default Services = client.on('message', (message) => {

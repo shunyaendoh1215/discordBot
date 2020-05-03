@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-export const client = new Discord.Client();
+export default client = new Discord.Client();
 import Services from './messages/services';
 import Info from './messages/info';
 import Echo from './messages/echo';
