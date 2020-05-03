@@ -85,5 +85,3 @@ const Services = client.on('message', (message) => {
       break;
   }
 });
-
-export default Services;

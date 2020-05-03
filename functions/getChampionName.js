@@ -462,5 +462,3 @@ const getChampionName = (content) => {
       break;
   }
 };
-
-export default getChampionName;

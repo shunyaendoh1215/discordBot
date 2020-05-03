@@ -19,5 +19,3 @@ const Info = client.on('message', (message) => {
     );
   }
 });
-
-export default Info;

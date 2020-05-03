@@ -12,5 +12,3 @@ const Echo = client.on('message', (message) => {
     );
   }
 });
-
-export default Echo;
