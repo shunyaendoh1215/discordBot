@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 client = new Discord.Client();
 
-export default Info = client.on('message', (message) => {
+Info = client.on('message', (message) => {
   if (message.author.bot) return;
   if (message.content == '/help lolbot') {
     message.reply(

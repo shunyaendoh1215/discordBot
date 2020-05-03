@@ -9,8 +9,8 @@ client.on('ready', () => {
   console.log('ready...');
 });
 
-Services;
-Info;
-Echo;
+// Services;
+// Info;
+// Echo;
 
 client.login('NzA1NDAxMTI1MjUxMTg2Njk4.XqwQsQ.UNMh7GHqeHDvwcxAnAvUmKoHpIU');

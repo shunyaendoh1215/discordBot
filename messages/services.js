@@ -3,7 +3,7 @@ client = new Discord.Client();
 
 const getChampionName = require('../functions/getChampionName');
 
-export default Services = client.on('message', (message) => {
+Services = client.on('message', (message) => {
   if (message.author.bot) return;
   switch (true) {
     case /\/yourgg (.+)$/.test(message.content):
