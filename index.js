@@ -51,9 +51,10 @@ client.on('message', (message) => {
         `
         );
       } else {
+        let name = message.content.split(' ')[1];
         message.reply(
           `
-        📈CHAMPION GGで${championGG}の情報を検索...
+        📈CHAMPION GGで${name}の情報を検索...
 
         お探しのチャンピオンは見つかりませんでした。
         `
@@ -71,9 +72,10 @@ client.on('message', (message) => {
         `
         );
       } else {
+        let name = message.content.split(' ')[1];
         message.reply(
           `
-        📈CHAMPION GGで${uGG}の情報を検索...
+        📈CHAMPION GGで${name}の情報を検索...
 
         お探しのチャンピオンは見つかりませんでした。
         `
