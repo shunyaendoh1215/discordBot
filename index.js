@@ -41,7 +41,7 @@ client.on('message', (message) => {
     case /\/krbuild (.+)$/:
       break;
     case /\/champgg (.+)/.test(message.content):
-      const championName = getChampionName(message.content);
+      let championName = getChampionName(message.content);
       message.reply(
         `
         📈CHAMPION GGで${championName}の情報を検索...
@@ -51,7 +51,7 @@ client.on('message', (message) => {
       );
       break;
     case /\/ugg (.+)/.test(message.content):
-      const championName = getChampionName(message.content);
+      let championName = getChampionName(message.content);
       message.reply(
         `
         📈U.GGで${championName}の情報を検索...
@@ -60,7 +60,7 @@ client.on('message', (message) => {
         `
       );
       break;
-    case /\/ryuradi/.test(message.content):
+    case /\/ryuinfo/.test(message.content):
       message.reply(
         `
         🐉リュウさん☆の配信コミュニティはこちら...
