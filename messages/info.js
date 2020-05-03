@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 client = new Discord.Client();
 
-Info = client.on('message', (message) => {
+const Info = client.on('message', (message) => {
   if (message.author.bot) return;
   if (message.content == '/help lolbot') {
     message.reply(
@@ -19,3 +19,5 @@ Info = client.on('message', (message) => {
     );
   }
 });
+
+export default Info;

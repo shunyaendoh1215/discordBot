@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 client = new Discord.Client();
 
-const getChampionName = require('../functions/getChampionName');
+import getChampionName from '../functions/getChampionName';
 
-Services = client.on('message', (message) => {
+const Services = client.on('message', (message) => {
   if (message.author.bot) return;
   switch (true) {
     case /\/yourgg (.+)$/.test(message.content):
@@ -85,3 +85,5 @@ Services = client.on('message', (message) => {
       break;
   }
 });
+
+export default Services;

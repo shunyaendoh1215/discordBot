@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 client = new Discord.Client();
 
-Echo = client.on('message', (message) => {
+const Echo = client.on('message', (message) => {
   if (message.author.bot) return;
   if (message.content.includes('のまぼ')) {
     message.reply(
@@ -12,3 +12,5 @@ Echo = client.on('message', (message) => {
     );
   }
 });
+
+export default Echo;
