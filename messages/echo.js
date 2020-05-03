@@ -1,4 +1,5 @@
-import { client } from '../index';
+const Discord = require('discord.js');
+client = new Discord.Client();
 
 export default Echo = client.on('message', (message) => {
   if (message.author.bot) return;

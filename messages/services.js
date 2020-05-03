@@ -1,4 +1,6 @@
-import { client } from '../index';
+const Discord = require('discord.js');
+client = new Discord.Client();
+
 import getChampionName from '../functions/getChampionName';
 
 export default Services = client.on('message', (message) => {
