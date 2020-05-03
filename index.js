@@ -42,19 +42,19 @@ client.on('message', (message) => {
       break;
     case /\/champgg (.+)/.test(message.content):
       let championGG = getChampionName(message.content);
+      let champSearchName = message.content.split(' ')[1];
       if (championGG !== 'notFound') {
         message.reply(
           `
-        📈CHAMPION GGで${championGG}の情報を検索...
+        📈CHAMPION GGで${champSearchName}の情報を検索...
 
         https://champion.gg/champion/${championGG}
         `
         );
       } else {
-        let name = message.content.split(' ')[1];
         message.reply(
           `
-        📈CHAMPION GGで${name}の情報を検索...
+        📈CHAMPION GGで${champSearchName}の情報を検索...
 
         お探しのチャンピオンは見つかりませんでした。
         `
@@ -63,19 +63,19 @@ client.on('message', (message) => {
       break;
     case /\/ugg (.+)/.test(message.content):
       let uGG = getChampionName(message.content);
+      let uggSearchName = message.content.split(' ')[1];
       if (uGG !== 'notFound') {
         message.reply(
           `
-        📈U.GGで${uGG}の情報を検索...
+        📈U.GGで${uggSearchName}の情報を検索...
 
         https://u.gg/lol/champions/${uGG.toLowerCase()}/build
         `
         );
       } else {
-        let name = message.content.split(' ')[1];
         message.reply(
           `
-        📈CHAMPION GGで${name}の情報を検索...
+        📈CHAMPION GGで${uggSearchName}の情報を検索...
 
         お探しのチャンピオンは見つかりませんでした。
         `
