@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 client = new Discord.Client();
 
-import getChampionName from '../functions/getChampionName';
+const getChampionName = require('../functions/getChampionName');
 
 const Services = client.on('message', (message) => {
   if (message.author.bot) return;
