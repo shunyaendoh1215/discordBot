@@ -41,26 +41,46 @@ client.on('message', (message) => {
     case /\/krbuild (.+)$/:
       break;
     case /\/champgg (.+)/.test(message.content):
-      let championName = getChampionName(message.content);
-      message.reply(
-        `
-        📈CHAMPION GGで${championName}の情報を検索...
+      let championGG = getChampionName(message.content);
+      if (championGG !== 'notFound') {
+        message.reply(
+          `
+        📈CHAMPION GGで${championGG}の情報を検索...
 
-        https://champion.gg/champion/${championName}
+        https://champion.gg/champion/${championGG}
         `
-      );
+        );
+      } else {
+        message.reply(
+          `
+        📈CHAMPION GGで${championGG}の情報を検索...
+
+        お探しのチャンピオンは見つかりませんでした。
+        `
+        );
+      }
       break;
     case /\/ugg (.+)/.test(message.content):
-      let championName = getChampionName(message.content);
-      message.reply(
-        `
-        📈U.GGで${championName}の情報を検索...
+      let uGG = getChampionName(message.content);
+      if (uGG !== 'notFound') {
+        message.reply(
+          `
+        📈U.GGで${uGG}の情報を検索...
 
-        https://u.gg/lol/champions/${championName.toLowerCase()}/build
+        https://u.gg/lol/champions/${uGG.toLowerCase()}/build
         `
-      );
+        );
+      } else {
+        message.reply(
+          `
+        📈CHAMPION GGで${uGG}の情報を検索...
+
+        お探しのチャンピオンは見つかりませんでした。
+        `
+        );
+      }
       break;
-    case /\/ryuinfo/.test(message.content):
+    case /\/dra info/.test(message.content):
       message.reply(
         `
         🐉リュウさん☆の配信コミュニティはこちら...
@@ -541,7 +561,7 @@ function getChampionName(content) {
       return 'Zyra';
       break;
     default:
-      return name;
+      return 'notFound';
       break;
   }
 }
