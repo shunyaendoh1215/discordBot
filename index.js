@@ -1,9 +1,9 @@
-// const Services = require('./messages/services');
-// const Info = require('./messages/info');
-// const Echo = require('./messages/echo');
-import { Services } from './messages/services';
-import { Info } from './messages/info';
-import { Echo } from './messages/echo';
+const Services = require('./messages/services');
+const Info = require('./messages/info');
+const Echo = require('./messages/echo');
+// import { Services } from './messages/services';
+// import { Info } from './messages/info';
+// import { Echo } from './messages/echo';
 const Discord = require('discord.js');
 client = new Discord.Client();
 
