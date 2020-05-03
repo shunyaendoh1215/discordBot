@@ -1,4 +1,4 @@
-export default function getChampionName(content) {
+export default getChampionNamefunction = (content) => {
   let name = content.split(' ')[1];
   switch (true) {
     case /Aatrox|aatrox|a太郎|エイトロックス|エイトロ/.test(name):
@@ -461,4 +461,4 @@ export default function getChampionName(content) {
       return 'notFound';
       break;
   }
-}
+};
