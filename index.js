@@ -6,37 +6,71 @@ client.on('ready', () => {
 });
 
 client.on('message', (message) => {
-  let championName_short = message.content.split(' ')[1];
-  console.log(championName_short);
-  let championName = getChampionName(championName_short);
-  console.log(championName);
-
   switch (true) {
     case /\/help lolbot/.test(message.content):
       message.reply(
-        '\n"/yourgg [SN]": YOUR.GGでサモナーを検索\n"/opgg [SN]": OP.GGでサモナーを検索\n"/champgg [Champion Name]": CHAMPION GGでチャンピオン情報を検索\n"/ugg [Champion Name]": U.ggでチャンピオン情報を検索'
+        `
+        "/yourgg [SN]": YOUR.GGでサモナーを検索
+
+        "/opgg [SN]": OP.GGでサモナーを検索
+
+        "/champgg [Champion Name]": CHAMPION GGでチャンピオン情報を検索
+
+        "/ugg [Champion Name]": U.ggでチャンピオン情報を検索
+        `
       );
       break;
     case /\/yourgg (.+)$/.test(message.content):
       message.reply(
-        `\nSN: ${RegExp.$1}をYOUR.GGで検索...\nhttps://your.gg/jp/profile/${RegExp.$1}`
+        `
+        📈SN: ${RegExp.$1}をYOUR.GGで検索...
+
+        https://your.gg/jp/profile/${RegExp.$1}
+        `
       );
       break;
     case /\/opgg (.+)$/.test(message.content):
       message.reply(
-        `\nSN: ${RegExp.$1}をOP.GGで検索...\nhttps://jp.op.gg/summoner/userName=${RegExp.$1}`
+        `
+        📈SN: ${RegExp.$1}をOP.GGで検索...
+
+        https://jp.op.gg/summoner/userName=${RegExp.$1}
+        `
       );
       break;
     case /\/krbuild (.+)$/:
       break;
     case /\/champgg (.+)/.test(message.content):
+      const championName = getChampionName(message.content);
       message.reply(
-        `\nCHAMPION GGで${championName}の情報を検索...\nhttps://champion.gg/champion/${championName}`
+        `
+        📈CHAMPION GGで${championName}の情報を検索...
+
+        https://champion.gg/champion/${championName}
+        `
       );
       break;
-    case /\ugg (.+)/.test(message.content):
+    case /\/ugg (.+)/.test(message.content):
+      const championName = getChampionName(message.content);
       message.reply(
-        `\nU.GGで${championName}の情報を検索...\nhttps://u.gg/lol/champions/${championName.toLowerCase()}/build`
+        `
+        📈U.GGで${championName}の情報を検索...
+
+        https://u.gg/lol/champions/${championName.toLowerCase()}/build
+        `
+      );
+      break;
+    case /\/ryuradi/.test(message.content):
+      message.reply(
+        `
+        🐉リュウさん☆の配信コミュニティはこちら...
+
+        https://com.nicovideo.jp/community/co1210870
+
+        🐲リュウさん☆のTwitterはこちら...
+
+        https://twitter.com/dragonngt
+        `
       );
       break;
     default:
@@ -47,7 +81,8 @@ client.on('message', (message) => {
 client.login('NzA1NDAxMTI1MjUxMTg2Njk4.XqwQsQ.UNMh7GHqeHDvwcxAnAvUmKoHpIU');
 // client.login(process.env.BOT_TOKEN);
 
-function getChampionName(name) {
+function getChampionName(content) {
+  let name = content.split(' ')[1];
   switch (true) {
     case /Aatrox|aatrox|a太郎|エイトロックス|エイトロ/.test(name):
       return 'Aatrox';
